@@ -1,0 +1,8 @@
+version: '3'
+services:
+  media-server:
+    image: j75689/media-server
+    ports:
+      - '8808:8809'
+    volumes:
+      - 'd:/media:/media'
