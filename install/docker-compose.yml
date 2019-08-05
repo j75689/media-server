@@ -3,6 +3,6 @@ services:
   media-server:
     image: j75689/media-server
     ports:
-      - '8808:8808'
+      - '8808:58808'
     volumes:
       - 'd:/media:/media'

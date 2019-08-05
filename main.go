@@ -17,7 +17,7 @@ func main() {
 	apiV1 := router.Group("/api/v1")
 	apiV1.GET("/video/list", showMediaList)
 	apiV1.GET("/video/player/:id", viedoStream)
-	fmt.Println(router.Run(":8808"))
+	fmt.Println(router.Run(":58808"))
 }
 
 var videoInfoMapping = make(map[string]interface{})            // file name index
@@ -42,10 +42,10 @@ func showMediaList(c *gin.Context) {
 		}
 	}
 	count := 0
-	list := []*map[string]interface{}{}
+	list := []map[string]interface{}{}
 	for _, data := range videoHashMapping {
 		count++
-		list = append(list, &data)
+		list = append(list, data)
 	}
 	c.JSON(200, map[string]interface{}{"count": count, "list": list})
 }
